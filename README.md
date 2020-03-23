@@ -10,3 +10,9 @@ A funcionalidade do chat por vídeo deverá permitir que o usuário efetue uma t
 * Gerenciamento dinâmico de chamadas ordenados em fila (o sistema deverá ser capaz de distribuir as chamadas por ordem de chegada, conforme os atendentes estiverem livres para atendimento)
 * Gerenciamento de espera das chamadas enquanto não for possível atendimento
 
+---
+
+# Como realizar
+
+* Para iniciar, clone deste repositório
+* Para organização dos sprints entre os membros da equipe, basta ir no link referente ao projeto [aqui](https://github.com/eagle-id/chat-video-teleconsulta/projects/1) 
