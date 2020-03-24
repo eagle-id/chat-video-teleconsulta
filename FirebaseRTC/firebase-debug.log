@@ -1,0 +1,48 @@
+[debug] [2020-03-24T12:18:30.034Z] ----------------------------------------------------------------------
+[debug] [2020-03-24T12:18:30.036Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\alfop\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2020-03-24T12:18:30.036Z] CLI Version:   7.16.0
+[debug] [2020-03-24T12:18:30.036Z] Platform:      win32
+[debug] [2020-03-24T12:18:30.036Z] Node Version:  v12.13.0
+[debug] [2020-03-24T12:18:30.036Z] Time:          Tue Mar 24 2020 09:18:30 GMT-0300 (GMT-03:00)
+[debug] [2020-03-24T12:18:30.036Z] ----------------------------------------------------------------------
+[debug] [2020-03-24T12:18:30.036Z] 
+[debug] [2020-03-24T12:18:30.042Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-24T12:18:30.043Z] > authorizing via signed-in user
+[debug] [2020-03-24T12:18:30.043Z] [iam] checking project desafiocovid19-2be7d for permissions ["firebase.projects.get"]
+[debug] [2020-03-24T12:18:30.045Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/desafiocovid19-2be7d:testIamPermissions  
+
+[debug] [2020-03-24T12:18:31.177Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-24T12:18:31.178Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/desafiocovid19-2be7d  
+ 
+[debug] [2020-03-24T12:18:32.414Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-24T12:18:32.419Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/desafiocovid19-2be7d/webApps/-/config  
+ 
+[debug] [2020-03-24T12:18:33.963Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-03-24T16:52:20.396Z] ----------------------------------------------------------------------
+[debug] [2020-03-24T16:52:20.398Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\alfop\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2020-03-24T16:52:20.398Z] CLI Version:   7.16.0
+[debug] [2020-03-24T16:52:20.398Z] Platform:      win32
+[debug] [2020-03-24T16:52:20.398Z] Node Version:  v12.13.0
+[debug] [2020-03-24T16:52:20.399Z] Time:          Tue Mar 24 2020 13:52:20 GMT-0300 (GMT-03:00)
+[debug] [2020-03-24T16:52:20.399Z] ----------------------------------------------------------------------
+[debug] [2020-03-24T16:52:20.399Z] 
+[debug] [2020-03-24T16:52:20.455Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-24T16:52:20.455Z] > authorizing via signed-in user
+[debug] [2020-03-24T16:52:20.455Z] [iam] checking project desafiocovid19-2be7d for permissions ["firebase.projects.get"]
+[debug] [2020-03-24T16:52:20.457Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-24T16:52:20.457Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-24T16:52:20.818Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-24T16:52:20.885Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/desafiocovid19-2be7d:testIamPermissions  
+
+[debug] [2020-03-24T16:52:21.993Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-24T16:52:21.997Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/desafiocovid19-2be7d  
+ 
+[debug] [2020-03-24T16:52:23.550Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-24T16:52:23.552Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/desafiocovid19-2be7d/webApps/-/config  
+ 
+[debug] [2020-03-24T16:52:25.445Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
