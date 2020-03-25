@@ -236,7 +236,7 @@ async function hangUp(e) {
     await roomRef.delete();
   }
 
-  document.location.reload(true);
+  document.location.href = "./end.html"; 
 }
 
 function registerPeerConnectionListeners() {
