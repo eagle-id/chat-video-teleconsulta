@@ -24,7 +24,7 @@ function init() {
   document.querySelector('#createBtn').addEventListener('click', createRoom);
   document.querySelector('#joinBtn').addEventListener('click', joinRoom);
   roomDialog = new mdc.dialog.MDCDialog(document.querySelector('#room-dialog'));
-  document.querySelector('#lineUpdate').addEventListener('click', getLineInformation);
+  document.addEventListener('DOMContentLoaded', getLineInformation);
 }
 
 async function createRoom() {
@@ -105,6 +105,7 @@ async function createRoom() {
     });
   });
   // Listen for remote ICE candidates above
+  getLineInformation();
 }
 
  function joinRoom() {
@@ -321,5 +322,7 @@ checkLine.get().then(function (querySnapshot) {
 });  
 
 }
-
+window.setInterval(function(){
+  getLineInformation();
+}, 10000);
 init();
