@@ -46,3 +46,32 @@
 [debug] [2020-03-24T16:52:25.445Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-03-26T12:44:36.639Z] ----------------------------------------------------------------------
+[debug] [2020-03-26T12:44:36.641Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\alfop\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-03-26T12:44:36.641Z] CLI Version:   7.16.0
+[debug] [2020-03-26T12:44:36.641Z] Platform:      win32
+[debug] [2020-03-26T12:44:36.641Z] Node Version:  v12.13.0
+[debug] [2020-03-26T12:44:36.642Z] Time:          Thu Mar 26 2020 09:44:36 GMT-0300 (GMT-03:00)
+[debug] [2020-03-26T12:44:36.642Z] ----------------------------------------------------------------------
+[debug] [2020-03-26T12:44:36.642Z] 
+[debug] [2020-03-26T12:44:36.718Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-26T12:44:36.718Z] > authorizing via signed-in user
+[debug] [2020-03-26T12:44:36.719Z] [iam] checking project desafiocovid19-2be7d for permissions ["firebase.projects.get"]
+[debug] [2020-03-26T12:44:36.721Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-26T12:44:36.722Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-26T12:44:37.183Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-26T12:44:37.261Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/desafiocovid19-2be7d:testIamPermissions  
+
+[debug] [2020-03-26T12:44:38.470Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-26T12:44:38.474Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/desafiocovid19-2be7d  
+ 
+[debug] [2020-03-26T12:44:39.937Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\alfop\chat-video-teleconsulta-master\FirebaseRTC'...
+[info] 
+[debug] [2020-03-26T12:44:40.076Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/desafiocovid19-2be7d/webApps/-/config  
+ 
+[debug] [2020-03-26T12:44:40.727Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
