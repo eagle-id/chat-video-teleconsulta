@@ -24,7 +24,7 @@ function init() {
   document.querySelector('#createBtn').addEventListener('click', createRoom);
   document.querySelector('#joinBtn').addEventListener('click', joinRoom);
   roomDialog = new mdc.dialog.MDCDialog(document.querySelector('#room-dialog'));
-  document.querySelector('#lineUpdate').addEventListener('click', getLineLength);
+  document.querySelector('#lineUpdate').addEventListener('click', getLineInformation);
 }
 
 async function createRoom() {
@@ -263,30 +263,62 @@ function registerPeerConnectionListeners() {
   });
 }
 
-async function getLineLength(){
-  document.querySelector('#line').innerText = `Pessoas na fila: Aguardando informações`; 
+
+async function getLineInformation(){
+  getLineSize();
+  if(roomId != null){
+    getMeOnLine();
+  }
+}
+
+async function getLineSize(){
+    document.querySelector('#line').innerText = `Pessoas na fila: Aguardando informações`; 
+  const db = firebase.firestore();
+  const line = db.collection('rooms');
+  var lineSize = 0;
+  checkLine = line.orderBy('logEnterInLine');
+  
+  
+  checkLine.get().then(function (querySnapshot) {
+     
+    
+    querySnapshot.forEach(async function (doc) {  
+          
+        var roomRef = db.collection('rooms').doc(`${doc.id}`);
+        var roomSnapshot = await roomRef.get();
+        if(roomSnapshot.data().answer == null){
+        lineSize++;
+        }
+          document.querySelector('#line').innerText = `Pessoas na fila: ${lineSize}`; 
+      });
+  
+  });  
+}
+
+async function getMeOnLine(){ 
 const db = firebase.firestore();
 const line = db.collection('rooms');
-var lineSize = 0;
+var meOnLine = 0;
+var myData =  await db.collection('rooms').doc(`${roomId}`).get();
 checkLine = line.orderBy('logEnterInLine');
 
-
 checkLine.get().then(function (querySnapshot) {
-   
-  
+ 
   querySnapshot.forEach(async function (doc) {  
         
       var roomRef = db.collection('rooms').doc(`${doc.id}`);
       var roomSnapshot = await roomRef.get();
+
       if(roomSnapshot.data().answer == null){
-      lineSize++;
+      if(roomSnapshot.data().logEnterInLine <= myData.data().logEnterInLine){
+        meOnLine++; 
       }
-        document.querySelector('#line').innerText = `Pessoas na fila: ${lineSize}`; 
+
+      }
+        document.querySelector('#meOnLine').innerText = `Minha posição na fila: ${meOnLine}`; 
     });
 
 });  
-
-
 
 }
 
