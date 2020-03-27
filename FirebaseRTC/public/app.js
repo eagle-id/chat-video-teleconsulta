@@ -9,7 +9,7 @@ function showPatientInfo(){
   document.getElementById('video-tab').classList.remove('offset-s2');
   document.getElementById('call_view_buttons').style.display = 'none';
 }
-/*mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
+mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
 
 const configuration = {
   iceServers: [
@@ -270,4 +270,4 @@ function registerPeerConnectionListeners() {
   });
 }
 
-init();*/
+init();
