@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tele-Consulta</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.9.3/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.9.3/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body style="background-color: #DCDCDC;">
+    <div class="default-green">
+        <a href="#" class="center">
+          <h6 class="white-text custom_nav"><b>Aguarde um momento</b></h6></a>
+        </div>        
+    <div class="container">
+        <div class="row">
+            <div class="center">
+                <img src="https://cdn.pixabay.com/photo/2020/03/17/12/25/washing-hands-4940196_960_720.jpg"  style="height: 8.5em; border-radius: 0.5em;">
+            </div>
+        </div>   
+            <ul class="collection" style="border-radius: 0.8em; ">
+                <li class="collection-item" style="border-radius: 0.8em; background-color: #DCDCDC;">
+                    <p style="background-color: white; padding: 0.25em; border-radius: .3em;">Paciente: M - 56</p>
+                    <div class="container">
+                        <p style="font-size: .9em;" class="center"><b>Prioridades na fila</b></p>
+                        <ul class="collection" style="border-radius: 0.8em;">
+                            <li class="collection-item" style="padding: .5em; background-color: #DCDCDC;">
+                                <table style="font-size: .9em;">
+                                    <tbody >
+                                    <tr style="border-bottom: none;">
+                                        <td>Alta</td>
+                                        <td class="center" style="padding: .5em; background-color: white; border-top-right-radius: .5em;">37</td>
+                                    </tr>
+                                    <tr style="border-bottom: none;">
+                                        <td>Media</td>
+                                        <td class="center" style="padding: .5em; background-color: white;">209</td>
+                                    </tr>
+                                    <tr style="border-bottom: none;">
+                                        <td>Baixa</td>
+                                        <td class="center" style="padding: .5em; background-color: white; border-bottom-right-radius: .5em;">68</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
