@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Tele-Consulta</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" type="text/css" href="main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script type="text/javascript" src="./app.js"></script>
+    </head>
+
+    <body class="grey lighten-3">
+      <nav class="default-green">
+        <div class="nav-wrapper" style="height: 2em;">
+          <a href="#" class="brand-logo"><img src="./pictures/logo.png" style="height: 2em;"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          </ul>
+        </div>
+      </nav>
+
+              <div class="row" style="margin-top: 1.5em;">
+
+                <div id="video-tab" class="col s8">
+                  <div class="" id="videos">
+                    <video id="localVideo" style="margin-top: .5em; border-radius: 0.8em;" muted autoplay playsinline></video>
+                    <!-- <video id="remoteVideo" autoplay playsinline></video>-->
+                </div>
+                </div>
+                <div id="patientInfo" class="col s4 left-align" style="font-size: .9em;">                 
+                  <ul class="collection" style="border-radius: 0.8em;">
+                    <li class="collection-item">
+                      <p>Nome:</p>
+                      <p>Idade:</p>
+                      <p>Sintomas:</p>
+                      <p>Telefone:</p>
+                      <p>Informações relevantes:</p>
+                    </li>
+                    <br>
+                    <div class="row">
+
+                      <div class="col s6 center">
+                        <!--<a  id="hiddePatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">arrow_forward</i>Ocultar</a>-->
+                        <a id="hiddePatientInfo" class="btn-large" style="height: auto; font-size: 1.25em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">arrow_forward</i>Ocultar</a>
+                      </div>
+                      <div class="col s6">
+                        <!--<a id="hang_up_info_tab" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>-->
+                        <a class="btn-large" style="height: auto; font-size: 1.25em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">call_end</i>Encerrar</a>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+      
+      <div id="call_view_buttons" class="row" style="display: none; margin-top: .5em;">
+        <div class="col s6 right-align">
+          <!--<a id="showPatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">info</i>Informações</a>-->
+          <a id="showPatientInfo" class="btn-large" style="height: auto; font-size: 1em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">info</i>Informações</a>
+        </div>
+        <div class="col s6 left-align">
+          <!--<a id="hang_up_call_view" style="border-radius: 0.5em;" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>-->
+          <a id="hang_up_call_view" class="btn-large" style="height: auto; font-size: 1em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">call_end</i>Encerrar</a>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('hiddePatientInfo').addEventListener('click', hiddePatientInfo);
+        document.getElementById('showPatientInfo').addEventListener('click', showPatientInfo);
+      </script>
+    </body>
+
+  </html>
+
