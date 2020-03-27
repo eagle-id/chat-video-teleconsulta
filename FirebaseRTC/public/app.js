@@ -1,4 +1,15 @@
-mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
+function hiddePatientInfo(){
+  document.getElementById('patientInfo').style.display = 'none';
+  document.getElementById('video-tab').classList.add('offset-s2');
+  document.getElementById('call_view_buttons').style.display = 'block';
+}
+
+function showPatientInfo(){
+  document.getElementById('patientInfo').style.display = 'block';
+  document.getElementById('video-tab').classList.remove('offset-s2');
+  document.getElementById('call_view_buttons').style.display = 'none';
+}
+/*mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
 
 const configuration = {
   iceServers: [
@@ -259,4 +270,4 @@ function registerPeerConnectionListeners() {
   });
 }
 
-init();
+init();*/

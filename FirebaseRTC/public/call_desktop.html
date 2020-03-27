@@ -1,6 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
+      <meta charset="UTF-8">
       <title>Tele-Consulta</title>
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,6 +12,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href="main.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script type="text/javascript" src="./app.js"></script>
     </head>
 
     <body class="grey lighten-3">
@@ -23,31 +25,33 @@
           </div>
         </nav>
       </div>
-      <table style="margin-top: 2em;">
+      <table style="margin-top: 0.8em;">
         <tbody>
           <tr>
-            <td>
-              <div class="row ">
-                <div class="col s8">
-                  <div class="center" id="videos">
+            <td >
+              <div class="row">
+                <div id="video-tab" class="col s8">
+                  <div class="" id="videos">
                     <video id="localVideo" muted autoplay playsinline></video>
                     <!-- <video id="remoteVideo" autoplay playsinline></video>-->
                 </div>
                 </div>
-                <div id="info_paciente" class="col s4" style="font-size: 1em;">                 
+                <div id="patientInfo" class="col s4 left-align" style="font-size: .8em;">                 
                   <ul class="collection">
-                    <li class="collection-item">Nome:</li>
-                    <li class="collection-item">Idade:</li>
-                    <li class="collection-item">Sintomas:</li>
-                    <li class="collection-item">Telefone:</li>
-                    <li class="collection-item">Informações relevantes:</li>
+                    <li class="collection-item">
+                      <p>Nome:</p>
+                      <p>Idade:</p>
+                      <p>Sintomas:</p>
+                      <p>Telefone:</p>
+                      <p>Informações relevantes:</p>
+                    </li>
                   </ul>
                   <div class="row">
                     <div class="col s6 right-align">
-                      <a class="green darken-2 btn left-align"><i class="material-icons left">arrow_forward</i>Ocultar</a>
+                      <a  id="hiddePatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">arrow_forward</i>Ocultar</a>
                     </div>
                     <div class="col s6 left-align">
-                      <a id="hang_up" class="red btn left-align" onclick="document.querySelector('#info_paciente').style.display = 'none'"><i class="material-icons left">call_end</i>Encerrar</a>
+                      <a id="hang_up_info_tab" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>
                     </div>
                   </div>
                 </div>
@@ -56,8 +60,20 @@
           </tr>
         </tbody>
       </table>
-        
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+      
+      <div id="call_view_buttons" class="row" style="display: none; margin-top: .5em;">
+        <div class="col s6 right-align">
+          <a  id="showPatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">info</i>Informações</a>
+        </div>
+        <div class="col s6 left-align">
+          <a id="hang_up_call_view" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('hiddePatientInfo').addEventListener('click', hiddePatientInfo);
+        document.getElementById('showPatientInfo').addEventListener('click', showPatientInfo);
+      </script>
     </body>
   </html>
 
