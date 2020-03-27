@@ -35,6 +35,7 @@ function init() {
   document.querySelector('#createBtn').addEventListener('click', createRoom);
   document.querySelector('#joinBtn').addEventListener('click', joinRoom);
   roomDialog = new mdc.dialog.MDCDialog(document.querySelector('#room-dialog'));
+  document.addEventListener('DOMContentLoaded', getLineInformation);
 }
 
 async function createRoom() {
@@ -75,7 +76,9 @@ async function createRoom() {
       type: offer.type,
       sdp: offer.sdp,
     },
+    'logEnterInLine': Date.now(),
   };
+  
   await roomRef.set(roomWithOffer);
   roomId = roomRef.id;
   console.log(`New room created with SDP offer. Room ID: ${roomRef.id}`);
@@ -113,24 +116,26 @@ async function createRoom() {
     });
   });
   // Listen for remote ICE candidates above
+  getLineInformation();
 }
 
-function joinRoom() {
-  document.querySelector('#createBtn').disabled = true;
-  document.querySelector('#joinBtn').disabled = true;
+ function joinRoom() {
+  const db = firebase.firestore();
+  const line = db.collection('rooms');
+  nextRef = line.orderBy('logEnterInLine').limit(1);
 
-  document.querySelector('#confirmJoinBtn').
-      addEventListener('click', async () => {
-        roomId = document.querySelector('#room-id').value;
-        console.log('Join room: ', roomId);
-        document.querySelector(
-            '#currentRoom').innerText = `Current room is ${roomId} - You are the callee!`;
-        await joinRoomById(roomId);
-      }, {once: true});
-  roomDialog.open();
+  nextRef.get().then(function (querySnapshot) {
+    querySnapshot.forEach(async function (doc) {
+        console.log(doc.id);
+        autoRoomId = doc.id;
+        await joinRoomById(autoRoomId);
+    });
+});      
+
 }
 
 async function joinRoomById(roomId) {
+  
   const db = firebase.firestore();
   const roomRef = db.collection('rooms').doc(`${roomId}`);
   const roomSnapshot = await roomRef.get();
@@ -270,4 +275,64 @@ function registerPeerConnectionListeners() {
   });
 }
 
+async function getLineInformation(){
+  getLineSize();
+  if(roomId != null){
+    getMeOnLine();
+  }
+}
+
+async function getLineSize(){
+    document.querySelector('#line').innerText = `Pessoas na fila: Aguardando informações`; 
+  const db = firebase.firestore();
+  const line = db.collection('rooms');
+  var lineSize = 0;
+  checkLine = line.orderBy('logEnterInLine');
+  
+  
+  checkLine.get().then(function (querySnapshot) {
+     
+    
+    querySnapshot.forEach(async function (doc) {  
+          
+        var roomRef = db.collection('rooms').doc(`${doc.id}`);
+        var roomSnapshot = await roomRef.get();
+        if(roomSnapshot.data().answer == null){
+        lineSize++;
+        }
+          document.querySelector('#line').innerText = `Pessoas na fila: ${lineSize}`; 
+      });
+  
+  });  
+}
+
+async function getMeOnLine(){ 
+const db = firebase.firestore();
+const line = db.collection('rooms');
+var meOnLine = 0;
+var myData =  await db.collection('rooms').doc(`${roomId}`).get();
+checkLine = line.orderBy('logEnterInLine');
+
+checkLine.get().then(function (querySnapshot) {
+ 
+  querySnapshot.forEach(async function (doc) {  
+        
+      var roomRef = db.collection('rooms').doc(`${doc.id}`);
+      var roomSnapshot = await roomRef.get();
+
+      if(roomSnapshot.data().answer == null){
+      if(roomSnapshot.data().logEnterInLine <= myData.data().logEnterInLine){
+        meOnLine++; 
+      }
+
+      }
+        document.querySelector('#meOnLine').innerText = `Minha posição na fila: ${meOnLine}`; 
+    });
+
+});  
+
+}
+window.setInterval(function(){
+  getLineInformation();
+}, 10000);
 init();
