@@ -34,7 +34,7 @@
                     <!-- <video id="remoteVideo" autoplay playsinline></video>-->
                 </div>
                 </div>
-                <div class="col s4">                 
+                <div id="info_paciente" class="col s4" style="font-size: 1em;">                 
                   <ul class="collection">
                     <li class="collection-item">Nome:</li>
                     <li class="collection-item">Idade:</li>
@@ -47,10 +47,9 @@
                       <a class="green darken-2 btn left-align"><i class="material-icons left">arrow_forward</i>Ocultar</a>
                     </div>
                     <div class="col s6 left-align">
-                      <a class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>
+                      <a id="hang_up" class="red btn left-align" onclick="document.querySelector('#info_paciente').style.display = 'none'"><i class="material-icons left">call_end</i>Encerrar</a>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </td>
