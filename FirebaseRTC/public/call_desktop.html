@@ -23,11 +23,8 @@
           </ul>
         </div>
       </nav>
-      <table style="margin-top: 0.8em;">
-        <tbody>
-          <tr>
-            <td >
-              <div class="row">
+
+              <div class="row" style="margin-top: 1.5em;">
 
                 <div id="video-tab" class="col s8">
                   <div class="" id="videos">
@@ -35,7 +32,7 @@
                     <!-- <video id="remoteVideo" autoplay playsinline></video>-->
                 </div>
                 </div>
-                <div id="patientInfo" class="col s4 left-align" style="font-size: .8em;">                 
+                <div id="patientInfo" class="col s4 left-align" style="font-size: .9em;">                 
                   <ul class="collection">
                     <li class="collection-item">
                       <p>Nome:</p>
@@ -44,29 +41,30 @@
                       <p>Telefone:</p>
                       <p>Informações relevantes:</p>
                     </li>
-                  </ul>
-                  <div class="row">
+                    <br>
+                    <div class="row">
 
-                    <div class="col s6 right-align">
-                      <a  id="hiddePatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">arrow_forward</i>Ocultar</a>
+                      <div class="col s6 center">
+                        <!--<a  id="hiddePatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">arrow_forward</i>Ocultar</a>-->
+                        <a id="hiddePatientInfo" class="btn-large" style="height: auto; font-size: 1.25em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">arrow_forward</i>Ocultar</a>
+                      </div>
+                      <div class="col s6">
+                        <!--<a id="hang_up_info_tab" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>-->
+                        <a class="btn-large" style="height: auto; font-size: 1.25em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">call_end</i>Encerrar</a>
+                      </div>
                     </div>
-                    <div class="col s6 left-align">
-                      <a id="hang_up_info_tab" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>
-                    </div>
-                  </div>
+                  </ul>
                 </div>
               </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
       
       <div id="call_view_buttons" class="row" style="display: none; margin-top: .5em;">
         <div class="col s6 right-align">
-          <a  id="showPatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">info</i>Informações</a>
+          <!--<a id="showPatientInfo" class="green darken-2 btn left-align"><i class="material-icons left">info</i>Informações</a>-->
+          <a id="showPatientInfo" class="btn-large" style="height: auto; font-size: 1em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">info</i>Informações</a>
         </div>
         <div class="col s6 left-align">
-          <a id="hang_up_call_view" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>
+          <!--<a id="hang_up_call_view" style="border-radius: 0.5em;" class="red btn left-align"><i class="material-icons left">call_end</i>Encerrar</a>-->
+          <a id="hang_up_call_view" class="btn-large" style="height: auto; font-size: 1em; background-color: #277269; border-radius: 0.5em; text-transform: none;"><i class="material-icons left">call_end</i>Encerrar</a>
         </div>
       </div>
 
