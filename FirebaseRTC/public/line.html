@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="main.css" rel="stylesheet">
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tele-Consulta</title>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/5.9.3/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/5.9.3/firebase-firestore.js"></script>
+        <!-- initialize the SDK after all desired features are loaded -->
+        <script defer src="/__/firebase/init.js"></script>
+    
+        <link rel="stylesheet" type="text/css" href="main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    </head>
+      </head>
 
-    <body style="background-color: gainsboro">
+    <body style="background-color: gainsboro; max-height: inherit;">
 
         <div class="" style="background-color: #349068;">
             <a href="#" class="center">
@@ -32,24 +39,14 @@
 
                 <div class="col s6" style="padding-top: 0em;">
                     <div style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">
-                        <a style="color: gray; font-size: 0.5em;">Existem NUM pessoas em sua frente na fila. Por favor, tenha paciência e permaneça conosco</a>
+                        <a style="color: gray; font-size: 0.5em;">Existem 00 pessoas em sua frente na fila. Por favor, tenha paciência e permaneça conosco</a>
                     </div>
                 </div>
 
-                <div class="col s4">
-                  <div class="center"> 
-                    <div>
-                      <div class="container">
-                        <div class="row valign-wrapper">
-                          <div class="col s12 offset-s0 valign">
-                            <div class="card light-gray darken-1" style="background-color: gray;">
-                              <div class="card-content white-text">
-                                <a style="height: 5em; width: 5em; color: white;">NUM</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                <div class="col s4" style="padding-top: 1em;">
+                  <div class="col s6 offset-s1">
+                    <div class="center">
+                      <a class=" grey lighten-2" style="padding: .45em ; border: solid; border-color: #757575; border-width: 0.05em; color: #277269; height: auto; font-size: 2.5em; border-radius: 0.25em; text-transform: none;"><b>00</b></a>
                     </div>
                   </div>
                 </div>
@@ -57,6 +54,6 @@
               </div>
             </td>
           </table>
-
+          <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>
